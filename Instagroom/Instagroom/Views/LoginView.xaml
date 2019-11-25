@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Instagroom.Views.LoginView"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <ContentPage.Content>
+        <RelativeLayout>
+
+            <!--JUST FOR FUN-->
+            
+            
+            <Label Text="INSTAGROOM"
+                FontSize="32" 
+                TextColor="Blue"
+                RelativeLayout.XConstraint="{ConstraintExpression
+                                                Type=RelativeToParent,
+                                                Property=Width,
+                                                Factor=0.5,
+                                                Constant=-100}"
+                RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.1,
+                Constant=0}"/>
+
+            <Entry x:Name="Username"
+                   Placeholder="Username" 
+                   Text="{Binding Username, Mode=TwoWay}"
+                   TextColor="Gray"
+                   RelativeLayout.XConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=0,
+                Constant=20}"
+                   RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.2,
+                Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent, 
+                Property=Width,
+                Factor=0.9,
+                Constant=0}"/>
+            <Entry 
+                   TextColor="Gray"
+                   IsPassword="True"
+                   Placeholder="Password"
+                   Text="{Binding Password, Mode=TwoWay}"
+                   RelativeLayout.XConstraint="{ConstraintExpression
+                Type=RelativeToView,
+                ElementName=Username,
+                Property=X,
+                Factor=1,
+                Constant=0}"
+                RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToView,
+                ElementName=Username,
+                Property=Y,
+                Factor=1.2,
+                Constant=20}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent, 
+                Property=Width,
+                Factor=0.9,
+                Constant=0}"/>
+
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Spacing="8"
+                         RelativeLayout.XConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=0,
+                Constant=0}"
+                         RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.4,
+                Constant=-20}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent, 
+                Property=Width,
+                Factor=1,        
+                Constant=0}">
+                
+                <Button Text="Log in" 
+                        BackgroundColor="DeepSkyBlue"
+                        Command="{Binding LogIn}"/>
+                <Label Text="OR"
+                     BackgroundColor="Transparent"
+                       HorizontalTextAlignment="Center"
+                FontSize="20" 
+                TextColor="Blue"/>
+                <Button Text="Log in via Google"
+                        BackgroundColor="RoyalBlue"
+                        WidthRequest="300"
+                        Command="{Binding LogInViaGoogle}"/>
+
+            </StackLayout>
+
+            <StackLayout VerticalOptions="End"
+                         HorizontalOptions="Center"
+                         Orientation="Horizontal"
+                         Spacing="20"
+                          RelativeLayout.XConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=0,
+                Constant=30}"
+                         RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.9,
+                Constant=0}">
+                <Label Text="Don't have an account?"
+                       FontSize="18"
+                       VerticalOptions="Center"
+                       />
+                <Button Text="Sign up"
+                        HeightRequest="60"
+                        WidthRequest="140"
+                        Command="{Binding ToRegistrationPage}"></Button>
+            </StackLayout>
+
+
+        </RelativeLayout>
+
+
+
+    </ContentPage.Content>
+
+
+
+</ContentPage>
