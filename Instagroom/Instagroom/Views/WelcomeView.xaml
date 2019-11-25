@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Instagroom.Views.WelcomeView"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackLayout Orientation="Vertical"
+                     Grid.Row="0"
+                     HorizontalOptions="Center"
+                     VerticalOptions="End"
+                     >
+            <Label Text="Welcome to"
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+            <Label Text="INSTAGROOM"
+                   FontSize="32" 
+                   TextColor="Blue"
+                   Margin="12,0,0,0"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical"
+                     Grid.Row="1"
+                     HorizontalOptions="Center"
+                     Padding="0,32,0,0"
+                     WidthRequest="200">
+            <Button Text="Sign up" 
+                    Command="{Binding ToRegistrationPage}"
+                    WidthRequest="90"/>
+            <Button Text="Log in"
+                    Command="{Binding ToLoginPage}"/>
+        </StackLayout>
+
+
+
+
+
+    </Grid>
+
+
+</ContentPage>
